@@ -25,8 +25,8 @@ Your Car Instructions:
             else:
                 print("\nCar already running. Choose a different option.")
         elif command in "stop":
-            if not running:  # == false:
-                running = True
+            if running:  # == false:
+                running = False
                 print("\nCar stopped.")
             else:
                 print("\nCar already stopped. Choose a different option.")

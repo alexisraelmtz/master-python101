@@ -11,7 +11,7 @@ possibilities = (
 )
 
 
-def array_addition():
+def array_application():
     array = []
     for i in range(n):
         text = input("Type the operation> ").split()
@@ -53,5 +53,5 @@ def array_addition():
     # Missing 1 added loop in case of 'typo' of 'Help' command.
 
 
-array_addition()
+array_application()
 

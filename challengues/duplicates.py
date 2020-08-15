@@ -8,7 +8,7 @@ a = [4, 3, 3, 1, 5, 2]
 
 
 def firstDuplicate(a):
-    a.insert(1, [])
+    dic = {}
     for index, number in enumerate(a):
         if a.index(number) not in dic:
             dic[index] = a.index(a[index])
@@ -17,6 +17,7 @@ def firstDuplicate(a):
     return -1
 
 
+# my_set = {1,2,3,4,5,}
 def firstDuplicate2(a):
     l = len(a)
     ab = [0] * (l + 1)

@@ -1,0 +1,14 @@
+// Functions and Modules Ive used:
+// 
+// 
+// from collections import Counter
+// 
+// my_dic.items()
+// my_dic.get()
+// 
+// my_set.difference(other_set)
+//
+// string.rindex(character)
+// 
+// xrange(a)
+// range(a)

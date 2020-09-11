@@ -1,4 +1,5 @@
 input1 = list(input().strip().split(":"))
+
 # print(input1)
 a = int(input1[0])
 b = int(input1[1])
@@ -27,4 +28,3 @@ while 1 <= a <= 12 and 00 <= b <= 59 and 00 <= c <= 59:
     break
 
 # print(f"{}:{}:{}")
-

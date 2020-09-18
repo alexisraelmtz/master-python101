@@ -17,17 +17,18 @@ def AverageScore(scores, assignment):
 
 def StudentPlacement(scores):
     survey = ""
-    for _, grades in scores.items():
-        num_passed = 0
+    num_passed = 0
+    for student, grades in scores.items():
         classResult = []
-        for topic, score in grades.items():
-            result = grades.get(topic)
+        for classroom, score in grades.items():
+            result = grades.get(classroom)
             classResult.append(result)
             if score >= 5:
                 num_passed += 1
-        survey += (
-            f"In {topic} they graded: {classResult} and {num_passed} students passed.\n"
-        )
+            for key, _ in grades.items():
+                if len(classResult) == len(grades):
+                    survey += f"In {key} they graded: {classResult} and {num_passed} students passed.\n"
+
     return survey
 
 

@@ -71,6 +71,8 @@ class Developers:
 user1 = Developers("Alex", "Martinez", 7_000)
 user2 = Developers("Dev", "Test", 4_500)
 
+reversed()
+
 print(user1.email)
 print(user2.fullname)
 print(user1.fullname)

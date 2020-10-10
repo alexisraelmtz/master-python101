@@ -6,7 +6,7 @@ import os
 
 def file_updater(folder):
     print("Fetching files ... \nPlease wait . . .")
-    directory = f"/mnt/c/Users/7K/{str(folder.strip())}"
+    directory = os.path.join("/mnt/c/Users/7K/", folder)
     filename = Path()
     os.chdir(directory)
     print(f"Currently working at: '{directory}' directory.")
@@ -40,6 +40,6 @@ def file_updater(folder):
     return print("\nFiles Succesfully Updated.")
 
 
-data = input("Type the directory you want to update Excel('*.xlsx') files:  ").strip()
-# data = "Documents/Python/master-python101/xl"
+# data = input("Type the directory you want to update Excel('*.xlsx') files:  ").strip()
+data = "Documents/Python/master-python101/xl"
 make = file_updater(data)

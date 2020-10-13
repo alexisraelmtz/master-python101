@@ -6,13 +6,7 @@ class ListNode(object):
 
 
 def isListPalindrome(l):
-    linked = ListNode(l)
-    # size = len(linked)
-    # for
-    if linked == linked[::-1]:
-        return True
-    else:
-        return False
+    c = l
 
 
 l = [0, 1, 0]

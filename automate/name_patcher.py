@@ -22,6 +22,6 @@ def patcher(folder):
     print(f"({n} files Found)")
 
 
-# relative = input("Type relative path of Folder to Patch Name Files:\n ").strip()
-relative = "Documents/Python/master-python101/scramble_names/"
+relative = input("Type relative path of Folder to Patch Name Files:\n ").strip()
+# relative = "Documents/Python/master-python101/scramble_names/"
 patcher(relative)

@@ -104,9 +104,9 @@ def unique(numbers, unsolved):
         existing = compare(unsolved)
         if n == 0:
             calculate(numbers, i, unedit)
-        elif n == unedit[i]:
+        elif n != 0 and n == unedit[i]:
             continue
-        elif n in existing:
+        elif n in unedit:
             calculate(numbers, i, unedit)
         elif n in solution:
             calculate(numbers, i, unedit)
@@ -144,6 +144,11 @@ def solve(grid):
                 grid[x].remove(grid[x][z])
                 grid[x].insert(z, new_axis[z])
                 # grid[x][z].append(new_line[z])
+        if correct(grid):
+            return grid
+        else:
+            grid.append(["Its", "Wrong"])
+            return grid
 
     # # 3x3 box verification:
     # for x in range(0, 9, 3):
@@ -153,12 +158,6 @@ def solve(grid):
     #         ):
     #             return False
     #             # Generate
-
-    if correct(grid):
-        return grid
-    else:
-        grid.append(["Its", "Wrong"])
-        return grid
 
 
 def real(grid):

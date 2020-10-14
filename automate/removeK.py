@@ -12,10 +12,36 @@ def removeKFromList(l, k):
             c.next = c.next.next
         else:
             c = c.next
-    return l.next if l and l.value == k else l
+    if l and l.value == k:
+        return l.next
+    else:
+        return l
 
 
-l = ListNode([3])
-print(l)
-result = removeKFromList(l, 3)
-print(result)
+x = [3, 1, 2, 3, 4, 5]
+
+node1 = ListNode(3)
+node2 = ListNode(1)
+node3 = ListNode(2)
+node4 = ListNode(3)
+node5 = ListNode(4)
+
+node1.next = node2
+node2.next = node3
+node3.next = node4
+node4.next = node5
+
+ll = node1
+k = 3
+l = removeKFromList(ll, k)
+# print(l)
+while True:
+    print(f"{l.value} ->>", end=" ")
+    if l.next is None:
+        print("None")
+        break
+    l = l.next
+
+#
+# result = removeKFromList(l, k)
+# print(result)

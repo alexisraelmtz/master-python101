@@ -6,6 +6,7 @@ class ListNode(object):
 
 
 def isListPalindrome(l):
+<<<<<<< HEAD
     stack = []
     c = l
     while c:
@@ -45,3 +46,13 @@ while True:
         print("None")
         break
     l = l.next
+=======
+    c = l
+
+
+l = [0, 1, 0]
+llist = ListNode(l)
+print(llist)
+result = isListPalindrome(llist)
+print(result)
+>>>>>>> d93cd84e7bc5c2f596392f59320918d996a8684f

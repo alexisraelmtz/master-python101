@@ -34,6 +34,7 @@ node4.next = node5
 ll = node1
 k = 3
 l = removeKFromList(ll, k)
+
 # print(l)
 while True:
     print(f"{l.value} ->>", end=" ")

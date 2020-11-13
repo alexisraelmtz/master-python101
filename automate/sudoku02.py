@@ -1,5 +1,5 @@
-import random
-import copy
+# import random
+# import copy
 
 
 def insertion(raw):
@@ -81,82 +81,39 @@ def real(grid):
 ############################
 
 
-def compare(line):
-    existing = [digit for digit in line if digit != 0]
-    return existing
-
-
-def generate(exception):
-    possible = list(range(1, 10))
-    # random.shuffle(possible)
-    existing = compare(exception)
-    for i in existing:
-        if i in possible:
-            possible.remove(i)
-        else:
-            continue
-    return possible
-
-
-def calculate(number, exception):
-    possible = generate(exception)
-    # number = random.choice(possible)
-    return possible
-
-
-############################
-
-
 def solve(grid):
-    def fill(i, x, n, grid):
-        possible = calculate(n, grid[i])
-        for num in possible:
-            grid[i].pop(x)
-            grid[i].insert(x, num)
-            while real(grid):
-                return grid
-            continue
-        grid[i].pop(x)
-        grid[i].insert(x, 0)
-        return grid
-
-    def backer(n, x):
-        if n == 0 and x > 0:
-            x -= 1
-            # if n != existing[x]:
-            return x
-
-    start = copy.deepcopy(grid)
-    # while not correct(grid):
-    for i, line in enumerate(grid):
-        # for x, n in enumerate(line):
-        for x in range(len(line)):
-            n = grid[i][x]
-            existing = start[i]
-            solution = set()
-            if n == 0:
-                fill(i, x, n, grid)
-                backer(n, x)
-            elif n != 0 and n == existing[x]:
-                continue
-            elif n in existing and n != existing[x]:
-                fill(i, x, n, grid)
-                backer(n, x)
-            elif n in solution:
-                fill(i, x, n, grid)
-                backer(n, x)
-            else:
-                solution.add(n)
+    ref = len(grid)
+    possible = list(range(1, 10))
     if correct(grid):
-        return grid
-    else:
-        grid.append(["Its", "Wrong"])
-        if real(grid):
-            grid.append(["None", "Repeating"])
-        return grid
+        grid.append(["RIGHT."])
+        return True
+
+    for x in range(ref):
+        for z in range(ref):
+            if grid[x][z] == 0:
+                for i in possible:
+                    grid[x][z] = i
+                    if real(grid):
+                        grid[x][z] = i
+                        if solve(grid):
+                            return grid
+                    grid[x][z] = 0
+                return False
+
+    # grid.append(["Wrong"])
+    # if real(grid):
+    #     w = 0
+    #     for line in grid:
+    #         w += line.count(0)
+    #     grid.append(["None", "Repeating", w])
+    #     return grid
+    # else:
+    #     grid.append(["Repeating"])
+    #     return grid
 
 
 ############################
+
 
 # input_1 = input().split()
 test = (
@@ -171,7 +128,7 @@ sudoku = insertion(test)
 if real(sudoku):
     print("Valid Sudoku")
     grid = solve(sudoku)
-    for i, line in enumerate(grid, start=1):
+    for i, line in enumerate(grid, start=0):
         print(i, line)
 else:
     print("Invalid Sudoku")

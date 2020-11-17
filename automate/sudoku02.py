@@ -88,16 +88,15 @@ def solve(grid):
         grid.append(["RIGHT."])
         return True
 
-    for x in range(ref):
-        for z in range(ref):
-            if grid[x][z] == 0:
+    for row in range(ref):
+        for col in range(ref):
+            if grid[row][col] == 0:
                 for i in possible:
-                    grid[x][z] = i
+                    grid[row][col] = i
                     if real(grid):
-                        grid[x][z] = i
                         if solve(grid):
                             return grid
-                    grid[x][z] = 0
+                    grid[row][col] = 0
                 return False
 
     # grid.append(["Wrong"])
@@ -115,7 +114,7 @@ def solve(grid):
 ############################
 
 
-# input_1 = input().split()
+# test = input().split()
 test = (
     "000260701 680070090 190004500 820100040 004602900 050003028 009300074 040050036 703018000"
 ).split()
@@ -126,9 +125,15 @@ test = (
 
 sudoku = insertion(test)
 if real(sudoku):
-    print("Valid Sudoku")
+    print("\nValid Sudoku\nSolution:")
     grid = solve(sudoku)
-    for i, line in enumerate(grid, start=0):
-        print(i, line)
+    print("  --------------------------------")
+    for i, line in enumerate(grid, start=1):
+        if i < 10:
+            print(f"{i} {line[0:3]}  {line[3:6]}  {line[6:9]}")
+        if i % 3 == 0 or i == 0:  # and i != 0:
+            print("  --------------------------------")
+        if i == 10:
+            print(line)
 else:
     print("Invalid Sudoku")

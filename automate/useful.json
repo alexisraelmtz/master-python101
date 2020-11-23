@@ -1,22 +1,24 @@
-// Functions and Modules Ive used:
-// 
-// 
-// from collections import Counter
-// 
-// my_dic.items()
-// my_dic.get()
-// 
-// my_set.difference(other_set)
-//
-// string.rindex(character)
-// 
-// xrange(a)
-// range(a)
-// 
-// 
-// def myFun(*args,**kwargs):
-//     print("args: ", args)
-//     print("kwargs: ", kwargs)
-// myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks")
-// 
-// 
+Functions and Modules Ive used:
+
+
+from collections import Counter
+
+my_dic.items()
+my_dic.get()
+
+my_set.difference(other_set)
+
+string.rindex(character)
+
+xrange(a)
+range(a)
+
+
+def myFun(*args,**kwargs):
+    print("args: ", args)
+    print("kwargs: ", kwargs)
+myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks")
+
+
+from collections import defaultdict
+hash = defaultdict(int)

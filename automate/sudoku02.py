@@ -94,6 +94,7 @@ def solve(grid):
                 for i in possible:
                     grid[row][col] = i
                     if real(grid):
+                        # print(grid[row])
                         if solve(grid):
                             return grid
                     grid[row][col] = 0
@@ -115,6 +116,10 @@ def solve(grid):
 
 
 # test = input().split()
+# test = (
+#     "000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000 000000000"
+# ).split()
+
 test = (
     "000260701 680070090 190004500 820100040 004602900 050003028 009300074 040050036 703018000"
 ).split()

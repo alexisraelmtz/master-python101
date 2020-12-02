@@ -17,4 +17,4 @@ def deque_rotator():
     return d
 
 
-deque_rotator()
+print(deque_rotator())

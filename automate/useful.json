@@ -1,4 +1,4 @@
-Functions and Modules Ive used:
+def()s and Modules worthwhile:
 
 
 from collections import Counter
@@ -22,3 +22,11 @@ myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks")
 
 from collections import defaultdict
 hash = defaultdict(int)
+
+
+q, mod = divmod(10,
+3)
+print(q, mod)
+# 3 1
+
+input = list(map(int, ((input()).strip().split())))

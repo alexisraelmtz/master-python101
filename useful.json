@@ -1,5 +1,10 @@
-def()s and Modules worthwhile:
+Ubuntu:
 
+lsb_release - a
+
+//////////////////////
+
+def()s and Modules worthwhile:
 
 from collections import Counter
 
@@ -30,3 +35,15 @@ print(q, mod)
 # 3 1
 
 input = list(map(int, ((input()).strip().split())))
+
+//////////////////////
+
+PostgreSQL:
+
+sudo service postgresql start
+sudo -u postgres psql // Psql Shell
+// or
+su - postgres
+psql
+
+ALTER USER postgres PASSWORD 'password:V';

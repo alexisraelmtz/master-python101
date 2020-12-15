@@ -60,41 +60,95 @@ if __name__ == "__main__":
 
 
 def minimal_number_of_packages(items, large, small):
-    fit_large = items // 5  # 1 round
-    fit_small = items % 5  # 4 reminder
+    capL = large * 5
+    maxCap = capL + small
+    # divimod(x,y) = (x // y , x % y)
+    filled, missing = divmod(items, 5)
 
-    # print(f"{fit_large}\n{fit_small}")
-
-    l = large * 5
-    max = l + small
-    if items <= max:
-        if fit_large <= large and fit_small <= small:
-            return fit_large + fit_small
-        elif fit_large > large:
-            fit_small = items - (large * 5)
-            if fit_small > small:
+    if items <= maxCap:
+        if filled <= large and missing <= small:
+            count = filled + missing
+        if filled > large:
+            diff = filled - large
+            if diff <= small:
+                count = (filled - diff) + (items - capL)
+            else:
                 return -1
-            return large + fit_small
+        return count
     return -1
 
 
 print(f"{minimal_number_of_packages(11, 2, 4)} packages where used.")
+print(f"{minimal_number_of_packages(10, 5, 5)} packages where used.")
+print(f"{minimal_number_of_packages(10, 1, 5)} packages where used.")
 
 
 def group_by_owners(files):
     if files:
         newd = {}
-        for key in files:
-            if files[key] in newd[key]:
-                arr = []
-                del newd[key]
-                arr.append(files[key])
-                arr.append(key)
-                newd[files[key]] = arr
-            newd[files[key]] = key
+        for txt in files:
+            name = files[txt]
+            new = []
+            if name in newd:
+                old = newd[name]
+                if isinstance(old, list):
+                    for el in old:
+                        new.append(el)
+                else:
+                    new.append(old)
+                new.append(txt)
+                newd[name] = new
+            else:
+                new.append(txt)
+                newd[name] = new
     return newd
 
 
 if __name__ == "__main__":
-    files = {"Input.txt": "Randy", "Code.py": "Stan", "Output.txt": "Randy"}
+    files = {
+        "Input.txt": "Randy",
+        "Code.py": "Stan",
+        "Output.txt": "Randy",
+        "Assignment.txt": "Randy",
+        "Sleep.txt": "Roy",
+        "Angry.txt": "Roy",
+    }
     print(group_by_owners(files))
+
+
+def unique_names(names1, names2):
+    def unique(lis):
+        if isinstance(lis, list):
+            for el in lis:
+                uni.add(el)
+            return uni
+        return uni.add(lis)
+
+    uni = set()
+    unique(names1)
+    unique(names2)
+    uni = list(uni)
+    return uni
+
+
+if __name__ == "__main__":
+    names1 = ["Ava", "Emma", "Olivia"]
+    names2 = ["Olivia", "Sophia", "Emma"]
+    print(unique_names(names1, names2))  # should print Ava, Emma, Olivia, Sophia
+
+
+def matchingStrings(strings, queries):
+    found = []
+    for query in queries:
+        count = 0
+        count += strings.count(query)
+        found.append(count)
+    return found
+
+
+a = (
+    "abcde sdaklfj asdjf na basdn sdaklfj asdjf na asdjf na basdn sdaklfj asdjf"
+).split()
+b = ("abcde sdaklfj asdjf na basdn").split()
+
+print(matchingStrings(a, b))

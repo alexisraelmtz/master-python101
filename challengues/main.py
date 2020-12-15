@@ -8,3 +8,6 @@ def my_function():
         print("Executed when invoked directly")
     else:
         print("Executed when imported as a module.")
+
+
+my_function()

@@ -20,3 +20,20 @@ def rotateImage2(a):
         for index, pixel in enumerate(nest):
             b[index].append(pixel)
     return b
+
+
+from collections import deque
+
+
+def rotateLeft(d, arr):
+    a = deque()
+    a.extend(arr)
+    a.rotate(-d)
+    return a
+
+
+d = 4
+z = ("1 2 3 4 5").split()
+print(z)
+r = rotateLeft(d, z)
+print(" ".join(r))

@@ -17,6 +17,7 @@ test_zone = pytz.timezone("America/Mexico_City")
 print(dt_test)
 dt_test = test_zone.localize(dt_test)
 print(dt_test)
+print(f"\n{dt_test.date()}")
 
 dt_shift = dt_test.astimezone(pytz.timezone("America/Chihuahua"))
 print(dt_shift)

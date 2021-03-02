@@ -1,4 +1,4 @@
-import matplotlib.pyplot as pt
+from matplotlib import pyplot as pt
 import itertools
 
 

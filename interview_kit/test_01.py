@@ -13,7 +13,7 @@ import re
 #     return False
 
 
-def validate(username):
+def _validateOld(username):
     if username:
         chars = int(len(username))
         if chars >= 4:
@@ -52,7 +52,7 @@ n = validate("MikeStandish0_")
 print(f"Valid name: {n}")  # TRUE Invalid username
 
 
-def john_mary(string):
+def _john_maryOld(string):
     if string and type(string) == str:
         a1 = string.upper().split("&")
         if "JOHN" in a1 and "MARY" in a1:
@@ -61,8 +61,6 @@ def john_mary(string):
             if z == x:
                 return True
     return False
-
-    import re
 
 
 def john_mary(str):

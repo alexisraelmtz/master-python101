@@ -123,3 +123,6 @@ string, n = list(
 )
 occur = repeatedString(string, n)
 print(f"Letter 'a' occurrences found in '{occur[0]}' : {occur[1]:,.2f}")
+
+for _ in range(10):
+    print("Hello")

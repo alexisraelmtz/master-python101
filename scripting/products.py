@@ -1,72 +1,97 @@
-# JSON: { products : [levels] }
+# JSON: { products : [levels aka. "categories before we reach the end Product"] }
 
 #    p1       p2
 #   /  \       |
-#  L1  L2      L1
+#  C1  C2      L1
+
+# inventory = {"id"=level.head,... "id0983":level.head}
 
 
-class level:
-    def __init__(self, value, left=None, right=None):
+class Node:
+    def __init__(self, value):
         self.value = value
         self.next = None
 
+    def __repr__(self):
+        return self.value
 
-def divider(nested):
-    while nested:
+
+class LinkedList:
+    def __init__(self, nodes=None):
+        self.head = None
+        if nodes is not None:
+            node = Node(value=nodes.pop(0))
+            self.head = node
+            for elem in nodes:
+                node.next = Node(value=elem)
+                node = node.next
+
+    def __iter__(self):
+        node = self.head
+        while node is not None:
+            yield (node)
+            node = node.next
+
+    def __repr__(self):
+        node = self.head
+        nodes = []
+        while node is not None:
+            nodes.append(node.value)
+            node = node.next
+        nodes.append("None")
+        return " -> ".join(nodes)
+
+
+def _levelsHelper(nested):
+    if nested:
         dic_Count = {}
         dic_Values = {}
-        for level in nested:
-            count = 0
-            if level.next:
-                count += 1
-
-            else:
-                break
-            dic_Values[nest] = values
-
+        for product in nested:
+            id = nested[product]
+            arrValues = []
+            count = 1
+            arrValues.append(product)
+            while id:
+                if id.next:
+                    arrValues.append(id.value)
+                    count += 1
+                    id = id.next
+                else:
+                    break
+            dic_Count[id.value] = f"{count} Level/s deep."
+            dic_Values[id.value] = arrValues
         return dic_Count, dic_Values
     else:
         return False
 
 
-def divide(Linked_list):
-    def hasLevel(product, level, count):
-        if not n:
-            return count
-        value = n.value
-        if (
-            (value > low and value < high)
-            and isBinary(n.left, low, n.value)
-            and isBinary(n.right, n.value, high)
-        ):
-            return Level.next
-        return False
+id1 = "Beauty"
+root1 = Node("Makeup")
+nodeA = Node("Face")
+nodeB = Node("Lipstick")
 
-    return isBinary(n, low, high)
+root1.next = nodeA
+nodeA.next = nodeB
 
+id2 = "Cleaning"
+root2 = Node("Clothing")
+nodeC = Node("Detergent")
 
-# def Solve(n, low=float("-inf"), high=float("inf")):
-#     def isBinary(n, low, high):
-#         if not n:
-#             return True
-#         value = n.value
-#         if (
-#             (value > low and value < high)
-#             and isBinary(n.left, low, n.value)
-#             and isBinary(n.right, n.value, high)
-#         ):
-#             return True
-#         return False
+root2.next = nodeC
 
-#     return isBinary(n, low, high)
+id3 = "Tools"
+root3 = Node("Wire Pliers")
 
 
-# def isBinaryTree(n):
-#     return _validator(n, float("-inf"), float("inf"))
+inventory = {
+    id1: root1,
+    id2: root2,
+    id3: root3,
+}
 
 
-#     4
-#    / \
-#   2   6
-#  / \   \
-# 1   3   8
+print(f"{inventory}\n")
+# print(root1.value)
+# print(root1.next)
+count, vals = _levelsHelper(inventory)
+print(f"{count}\n{vals}")

@@ -1,8 +1,10 @@
 # JSON: { products : [levels aka. "categories before we reach the end Product"] }
 
 #    p1       p2
-#   /  \       |
-#  C1  C2      L1
+#   /          |
+#  L1          L1
+#   |
+#  L2
 
 # inventory = {"id"=level.head,... "id0983":level.head}
 
@@ -80,7 +82,7 @@ nodeC = Node("Detergent")
 root2.next = nodeC
 
 id3 = "Tools"
-root3 = Node("Wire Pliers")
+root3 = Node("Electrical Pliers")
 
 
 inventory = {

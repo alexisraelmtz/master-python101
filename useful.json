@@ -7,6 +7,8 @@ lsb_release - a
 def()s and Modules worthwhile:
 
 from collections import Counter
+enumerate(alphabet)
+zip(heros,alterego)
 
 my_dic.items()
 my_dic.get()
@@ -17,6 +19,10 @@ string.rindex(character)
 
 xrange(a)
 range(a)
+
+arr.index() & arr.rindex()
+
+
 
 
 def myFun(*args,**kwargs):

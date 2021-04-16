@@ -1,6 +1,16 @@
 import re
 
 
+inputTest = list(map(int, ((input()).strip().split())))
+
+
+def helperFunc(inputTest):
+    return result
+
+
+print(helperFunc(inputTest))
+
+
 # def validate(username):
 #     if username:
 #         chars = int(len(username))

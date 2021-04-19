@@ -1,14 +1,14 @@
 import re
 
 
-inputTest = list(map(int, ((input()).strip().split())))
+# inputTest = list(map(int, ((input()).strip().split())))
 
 
-def helperFunc(inputTest):
-    return result
+# def helperFunc(inputTest):
+#     return result
 
 
-print(helperFunc(inputTest))
+# print(helperFunc(inputTest))
 
 
 # def validate(username):
@@ -296,3 +296,72 @@ def group_by_owners_OLD(files):
 # SELECT name
 # FROM employees
 # WHERE id not in (SELECT managerId FROM employees WHERE managerId not null);
+
+
+# Hola Alex, como estas?
+# Dados dos numeros (a,b), regresa la division a/b
+
+
+def _div(a, b):
+    # float("inf")
+    # if b != 0:
+    try:
+        return a / b
+    except:
+        return "Try different than 0"
+
+
+# div(0,10) = 0
+# div(10,0) = "Try different than 0"
+
+print(_div(0, 10))
+print(_div(10, 0))
+
+
+# atoi("10") = 10 -  C
+
+# "786"
+
+
+def string_to_int(string):
+    def char_to_int(char):
+        while char:
+            dicChars_Nums = {
+                "0": 0,
+                "1": 1,
+                "2": 2,
+                "3": 3,
+                "4": 4,
+                "5": 5,
+                "6": 6,
+                "7": 7,
+                "8": 8,
+                "9": 9,
+            }
+            try:
+                conv = dicChars_Nums[char]
+                return conv
+            except:
+                return False
+            
+
+    a = string
+    pos = len(a) - 1  # 3
+    sumTo = 0
+    for char in string:
+        # print(char)
+        intNum = char_to_int(char)  # 7
+        if intNum:
+            intNum = intNum * (1 * (10 ** (pos)))
+            # print(intNum)
+            pos -= 1
+            sumTo += intNum
+        else:
+            return "Please try Digits (0-9)"
+    return sumTo
+
+
+print(string_to_int("786"))
+print(string_to_int("76112"))
+print(string_to_int("abc"))
+# print(string_to_int("-10"))

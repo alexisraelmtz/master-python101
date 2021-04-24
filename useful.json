@@ -4,6 +4,8 @@ lsb_release - a
 
 //////////////////////
 
+Multicursor: Ctrl + Alt + (arrow up/down)
+
 def()s and Modules worthwhile:
 
 from collections import Counter

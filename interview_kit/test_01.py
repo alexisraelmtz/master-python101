@@ -365,3 +365,45 @@ print(string_to_int("786"))
 print(string_to_int("76112"))
 print(string_to_int("abc"))
 # print(string_to_int("-10"))
+
+
+def isBalanced_old(myStr):
+    listOpen = ["(","[","{"]
+    listClose = [")","]","}",]
+	listLetters = ["a","b",..."z"]
+    myStack = []
+    for item in myStr:
+		if item in listLetters:
+			break
+        elif item in listOpen:
+            myStack.append(item)
+        elif item in listClose:
+            position = listClose.index(item)
+            if myStack and (listOpen[position] == myStack[len(myStack)-1]):
+                myStack.pop()
+            else:
+                return False
+    if not myStack:
+        return True
+    else:
+        return False
+
+
+def isBalanced(myStr):
+    listOpen = ["(","[","{"]
+    listClose = [")","]","}"]
+    myStack = []
+    for item in myStr:
+        if item in listOpen:
+            myStack.append(item)
+        else:
+            if not myStack:
+                return False
+            else:
+                if item in listClose and myStack.pop() not in listOpen[listClose.index(item)]:
+                    return False
+    if not myStack:
+        return True
+    else:
+        return False
+    

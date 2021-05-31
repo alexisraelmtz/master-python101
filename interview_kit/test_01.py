@@ -298,10 +298,6 @@ def group_by_owners_OLD(files):
 # WHERE id not in (SELECT managerId FROM employees WHERE managerId not null);
 
 
-# Hola Alex, como estas?
-# Dados dos numeros (a,b), regresa la division a/b
-
-
 def _div(a, b):
     # float("inf")
     # if b != 0:

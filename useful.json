@@ -50,8 +50,35 @@ PostgreSQL:
 
 sudo service postgresql start
 sudo -u postgres psql // Psql Shell
-// or
-su - postgres
+
+su - postgres // locked permanently
 psql
 
-ALTER USER postgres PASSWORD 'password:V';
+create database sample01_april_db;
+
+sudo -u postgres psql 
+# \password postgres
+Enter new password: "strongpassword";
+
+//////////////////////
+
+Django SQLite to PostgreSQL
+
+$ python3 manage.py dumpdata > data_backup.json
+$ sudo apt update
+$ sudo apt install pgadmin4 pgadmin4-apache2
+$ pip3 install psycopg2
+
+-- create DATABASE name NEW_DB
+
+'ENGINE':'django.db.backends.postgresql_psycopg2'
+
+$ python3 manage.py migrate
+$ python3 manage.py migrate --run-syncdb
+
+$ python3 manage.py loaddata data_backup.json
+
+
+
+
+

@@ -14,3 +14,5 @@ def hi(who_is):
 
 
 print(hi("Alex"))
+var = hi("Shaddai")
+print(f"{var}, \nSuccessful test!")

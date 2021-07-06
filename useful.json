@@ -44,6 +44,8 @@ print(q, mod)
 
 input = list(map(int, ((input()).strip().split())))
 
+dic.setdefault(value, key)
+
 //////////////////////
 
 PostgreSQL:
@@ -51,14 +53,15 @@ PostgreSQL:
 sudo service postgresql start
 sudo -u postgres psql // Psql Shell
 
+sudo su postgres
 su - postgres // locked permanently
 psql
 
 create database sample01_april_db;
 
-sudo -u postgres psql 
 # \password postgres
-Enter new password: "strongpassword";
+CREATE USER mainengine WITH SUPERUSER PASSWORD '132525';
+ALTER USER postgres WITH PASSWORD '1314';
 
 //////////////////////
 
@@ -80,5 +83,9 @@ $ python3 manage.py loaddata data_backup.json
 
 
 
+
+///////////////////////////////////
+
+mysql -u root
 
 

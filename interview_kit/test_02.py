@@ -193,15 +193,15 @@ print(
 )  # should print[['vanilla', 'chocolate sauce'], ['chocolate', 'chocolate sauce']]
 
 
-import numpy as np
+# import numpy as np
 
 
-def find_roots(a, b, c):
-    coeff = [a, b, c]
-    return tuple(np.roots(coeff))
+# def find_roots(a, b, c):
+#     coeff = [a, b, c]
+#     return tuple(np.roots(coeff))
 
 
-# print(find_roots(2, 10, 8));
+# print(find_roots(2, 10, 8))
 
 
 def is_palindrome(word):
@@ -213,6 +213,16 @@ def is_palindrome(word):
 
 
 print(is_palindrome("Deleveled"))
+
+
+cars = {
+    "Xterra": "Nissan",
+    "Odyssey": "Honda",
+    "Camaro": "Chevrolet",
+    "Aventador": "Lamborghini",
+}
+for key in cars:
+    print(cars[key])
 
 # SELECT
 # 	items.name, sellers.name

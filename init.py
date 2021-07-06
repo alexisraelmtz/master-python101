@@ -1,5 +1,6 @@
 import sys
 
+# import numpy
 # import pandas
 
 # print(sys.version)
@@ -13,6 +14,5 @@ def hi(who_is):
     return hello
 
 
-print(hi("Alex"))
 var = hi("Shaddai")
 print(f"{var}, \nSuccessful test!")

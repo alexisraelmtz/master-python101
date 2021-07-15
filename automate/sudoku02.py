@@ -136,9 +136,9 @@ if real(sudoku):
     for i, line in enumerate(grid, start=1):
         if i < 10:
             print(f"{i} {line[0:3]}  {line[3:6]}  {line[6:9]}")
-        if i % 3 == 0 or i == 0:  # and i != 0:
-            print("  --------------------------------")
-        if i == 10:
-            print(line)
+    if i % 3 == 0 or i == 0:  # and i != 0:
+        print("  --------------------------------")
+    if i == 10:
+        print(line)
 else:
     print("Invalid Sudoku")

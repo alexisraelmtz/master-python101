@@ -25,6 +25,6 @@ def advance(board):
 
 
 glider = set([(0, 0), (1, 0), (2, 0), (0, 1), (1, 2)])
-for _ in range(10):
+for _ in range(100):
     glider = advance(glider)
     print(glider)

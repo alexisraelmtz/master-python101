@@ -11,6 +11,7 @@ DB_PORT = "5432"
 conn = psycopg2.connect(
     dbname=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT
 )
+# postgresql+psycopg2://user:password@host:port/dbname[?key=value&key=value...]
 
 with conn:
     with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:

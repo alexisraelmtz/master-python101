@@ -1,5 +1,6 @@
-# Depth First Search (DFS)
-from collections import Counter
+# Finding Connected Components:
+# --- Depth First Search (DFS) ---
+
 
 graph = [
     # adjacency list
@@ -35,6 +36,7 @@ def findComponents():
         if not visited[position]:
             count += 1
             depthForSearch(position)
+        print(f"BackTracking Node: {position}")
     return (count, components)
 
 
@@ -45,8 +47,9 @@ def depthForSearch(node):
     neighbors = graph[node]
     for next in neighbors:
         if not visited[next]:
-            # print(
-            #     f"Currently at Node {node}: {neighbors}. Visiting {next}")
+            print(
+                f"Currently at Node {node}: {neighbors}. Visiting {next}"
+            )
             depthForSearch(next)
 
 

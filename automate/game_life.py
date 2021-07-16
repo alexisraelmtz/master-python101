@@ -2,7 +2,7 @@ from matplotlib import pyplot as pt
 import itertools
 
 
-def neighbors(point):
+def neighbours(point):
     x, y = point
     yield x + 1, y
     yield x - 1, y
@@ -16,9 +16,9 @@ def neighbors(point):
 
 def advance(board):
     newstate = set()
-    recalc = board | set(itertools.chain(*map(neighbors, board)))
+    recalc = board | set(itertools.chain(*map(neighbours, board)))
     for point in recalc:
-        count = sum((neigh in board) for neigh in neighbors(point))
+        count = sum((neigh in board) for neigh in neighbours(point))
         if count == 3 or (count == 2 and point in board):
             newstate.add(point)
     return newstate

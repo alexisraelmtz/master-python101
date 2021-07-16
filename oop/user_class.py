@@ -1,6 +1,9 @@
 # Py OOP
 
 
+import datetime
+
+
 class Developers:
     raise_amount = 1.5
     devs_count = 0
@@ -100,7 +103,6 @@ print(f"\nNumber of active users: {Developers.devs_count}")
 print(new_user3.email)
 print(new_user4.fullname)
 
-import datetime
 
 day = datetime.date(2020, 9, 17)
 

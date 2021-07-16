@@ -35,9 +35,9 @@ def depthForSearch(node):
         return
     visited[node] = True
 
-    neighbors = graph[node]
-    for next in neighbors:
-        print(f"Currently at Node {node}: {neighbors}. Visiting {next}")
+    neighbours = graph[node]
+    for next in neighbours:
+        print(f"Currently at Node {node}: {neighbours}. Visiting {next}")
         depthForSearch(next)
 
 

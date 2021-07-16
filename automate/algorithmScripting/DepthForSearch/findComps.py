@@ -44,11 +44,11 @@ def depthForSearch(node):
     visited[node] = True
     components[node] = count
 
-    neighbors = graph[node]
-    for next in neighbors:
+    neighbours = graph[node]
+    for next in neighbours:
         if not visited[next]:
             print(
-                f"Currently at Node {node}: {neighbors}. Visiting {next}"
+                f"Currently at Node {node}: {neighbours}. Visiting {next}"
             )
             depthForSearch(next)
 

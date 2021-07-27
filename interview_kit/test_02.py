@@ -254,3 +254,30 @@ for key in cars:
 # SELECT name
 # FROM employees
 # WHERE id not in (SELECT managerId FROM employees WHERE managerId not null);
+
+
+# SELECT width*height AS Area, count() FROM rectangles
+# GROUP BY 1
+
+
+# SELECT name FROM authors
+# WHERE name LIKE 'N%'
+# AND(books > 30
+#     OR age < 30)
+
+
+# SELECT trim(name) from developers
+# WHERE lower(name) LIKE '%john%'
+
+
+# UPDATE menu
+# SET price = price*1.1
+# WHERE category in ("Soups", "Salads")
+
+
+# INSERT INTO retired_employees
+# (id, name)
+# SELECT id, name FROM employees
+# WHERE retired = "Y"
+
+

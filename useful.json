@@ -103,7 +103,7 @@ SELECT * FROM Customers
 LIMIT 3;
 
 SELECT * FROM Customers
-FETCH FIRST 3 ROWS ONLY; 
+FETCH FIRST 3 ROWS ONLY;
 
 SELECT TOP 50 PERCENT * FROM Customers;
 
@@ -116,9 +116,10 @@ FROM mytable;
 -
 SELECT column, another_column, …
 FROM mytable
-WHERE condition
+WHERE column condition
     AND/OR another_condition
-    IN/NOT IN …;
+    IN/NOT IN 
+    IS/IS NOT NULL …;
 -
 SELECT DISTINCT column, another_column, …
 FROM mytable
@@ -126,7 +127,14 @@ WHERE condition(s);
 ORDER BY column ASC/DESC;
 LIMIT num_limit OFFSET num_offset;
 -
-
+SELECT column, another_column, …
+FROM mytable
+INNER/LEFT/RIGHT/FULL JOIN another_table 
+    ON mytable.id = another_table.matching_id
+WHERE condition(s)
+ORDER BY column, … ASC/DESC
+LIMIT num_limit OFFSET num_offset;
+-
 
 
 

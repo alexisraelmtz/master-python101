@@ -96,4 +96,37 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'y
 mysql> FLUSH PRIVILEGES;
 mysql> quit
 
+---
+SELECT TOP 3 * FROM Customers;
+
+SELECT * FROM Customers
+LIMIT 3;
+
+SELECT * FROM Customers
+FETCH FIRST 3 ROWS ONLY; 
+
+SELECT TOP 50 PERCENT * FROM Customers;
+
+SELECT * FROM Customers
+FETCH FIRST 50 PERCENT ROWS ONLY;
+
+-
+SELECT column, another_column, …
+FROM mytable;
+-
+SELECT column, another_column, …
+FROM mytable
+WHERE condition
+    AND/OR another_condition
+    IN/NOT IN …;
+-
+SELECT DISTINCT column, another_column, …
+FROM mytable
+WHERE condition(s);
+ORDER BY column ASC/DESC;
+LIMIT num_limit OFFSET num_offset;
+-
+
+
+
 

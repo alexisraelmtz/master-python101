@@ -182,6 +182,11 @@ SET column = value_or_expr,
     other_column = another_value_or_expr, 
     …
 WHERE condition;
+
+e.g.
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
 -
 DELETE FROM mytable
 WHERE condition;
@@ -204,5 +209,6 @@ ALTER TABLE mytable
 ADD column DataType OptionalTableConstraint 
     DEFAULT default_value;
 -
-
+DROP TABLE IF EXISTS mytable;
+# Will Destroy ABSOLUTELY EVERYTHING.
 

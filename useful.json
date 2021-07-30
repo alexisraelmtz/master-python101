@@ -1,8 +1,12 @@
-Ubuntu:
+//////////////////////
+
+# Ubuntu
 
 lsb_release - a
 
 //////////////////////
+
+# Python
 
 Multicursor: Ctrl + Alt + (arrow up/down)
 
@@ -23,8 +27,6 @@ xrange(a)
 range(a)
 
 arr.index() & arr.rindex()
-
-
 
 
 def myFun(*args,**kwargs):
@@ -48,7 +50,7 @@ dic.setdefault(value, key)
 
 //////////////////////
 
-PostgreSQL:
+# PostgreSQL
 
 sudo service postgresql start
 sudo -u postgres psql // Psql Shell
@@ -65,7 +67,7 @@ ALTER USER postgres WITH PASSWORD '1314';
 
 //////////////////////
 
-Django SQLite to PostgreSQL
+# Django SQLite to PostgreSQL
 
 $ python3 manage.py dumpdata > data_backup.json
 $ sudo apt update
@@ -85,7 +87,7 @@ $ python3 manage.py loaddata data_backup.json
 
 
 ///////////////////////////////////
-
+# Linux
 sudo /etc/init.d/mysql start
 
 sudo mysql
@@ -96,7 +98,22 @@ mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'y
 mysql> FLUSH PRIVILEGES;
 mysql> quit
 
----
+# Mac
+To secure with password run:
+$    mysql_secure_installation
+
+To connect run:
+$    mysql -uroot
+
+$    mysql.server start
+
+Background service you can just run:
+$    brew services start mysql
+
+create DATABASE IF NOT EXISTS name NEW_DB
+
+---------------------------------------------------------
+
 SELECT TOP 3 * FROM Customers;
 
 SELECT * FROM Customers
@@ -110,7 +127,8 @@ SELECT TOP 50 PERCENT * FROM Customers;
 SELECT * FROM Customers
 FETCH FIRST 50 PERCENT ROWS ONLY;
 
--
+---------------------------------------------------------
+
 SELECT column, another_column, …
 FROM mytable;
 -
@@ -150,5 +168,41 @@ FROM mytable
     HAVING constraint_expression
     ORDER BY column ASC/DESC
     LIMIT count OFFSET COUNT;
+
+---------------------------------------------------------
+
+INSERT INTO mytable
+(column, another_column, …)
+VALUES (value_or_expr, another_value_or_expr, …),
+      (value_or_expr_2, another_value_or_expr_2, …),
+      …;
+-
+UPDATE mytable
+SET column = value_or_expr, 
+    other_column = another_value_or_expr, 
+    …
+WHERE condition;
+-
+DELETE FROM mytable
+WHERE condition;
+-
+CREATE TABLE IF NOT EXISTS mytable (
+    column DataType TableConstraint DEFAULT default_value,
+    another_column DataType TableConstraint DEFAULT default_value,
+    …
+);
+-
+TYPES"
+INT, BOOLEAN, FLOAT, DOUBLE, REAL;
+CHAR(num_chars), VARCHAR(num_chars), TEXT;
+DATE, DATETIME;
+BLOB;"
+CONSTRAINS"
+PRIMARY KEY, AUTOINCREMENT, UNIQUE, NOT NULL, CHECK, FOREIGN KEY;"
+-
+ALTER TABLE mytable
+ADD column DataType OptionalTableConstraint 
+    DEFAULT default_value;
+-
 
 

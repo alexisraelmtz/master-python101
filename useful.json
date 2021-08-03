@@ -65,6 +65,15 @@ create database sample01_april_db;
 CREATE USER mainengine WITH SUPERUSER PASSWORD '132525';
 ALTER USER postgres WITH PASSWORD '1314';
 
+---
+Mac:[
+    "To start postgresql:
+    brew services start postgresql
+    Or, if you don't want/need a background service you can just run:
+    /opt/homebrew/opt/postgresql/bin/postgres -D /opt/homebrew/var/postgres"
+]
+
+
 //////////////////////
 
 # Django SQLite to PostgreSQL
@@ -201,8 +210,8 @@ TYPES"
 INT, BOOLEAN, FLOAT, DOUBLE, REAL;
 CHAR(num_chars), VARCHAR(num_chars), TEXT;
 DATE, DATETIME;
-BLOB;"
-CONSTRAINS"
+BLOB;
+"CONSTRAINS"
 PRIMARY KEY, AUTOINCREMENT, UNIQUE, NOT NULL, CHECK, FOREIGN KEY;"
 -
 ALTER TABLE mytable

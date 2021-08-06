@@ -177,6 +177,13 @@ FROM mytable
     HAVING constraint_expression
     ORDER BY column ASC/DESC
     LIMIT count OFFSET COUNT;
+-
+SELECT *, …
+FROM mytable
+WHERE column > < >= <=
+    IN/NOT IN (SELECT another_column
+               FROM another_table
+               WHERE … );
 
 ---------------------------------------------------------
 
@@ -220,4 +227,6 @@ ADD column DataType OptionalTableConstraint
 -
 DROP TABLE IF EXISTS mytable;
 # Will Destroy ABSOLUTELY EVERYTHING.
+
+
 

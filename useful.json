@@ -1,8 +1,12 @@
-Ubuntu:
+//////////////////////
+
+# Ubuntu
 
 lsb_release - a
 
 //////////////////////
+
+# Python
 
 Multicursor: Ctrl + Alt + (arrow up/down)
 
@@ -23,8 +27,6 @@ xrange(a)
 range(a)
 
 arr.index() & arr.rindex()
-
-
 
 
 def myFun(*args,**kwargs):
@@ -48,7 +50,7 @@ dic.setdefault(value, key)
 
 //////////////////////
 
-PostgreSQL:
+# PostgreSQL
 
 sudo service postgresql start
 sudo -u postgres psql // Psql Shell
@@ -63,9 +65,18 @@ create database sample01_april_db;
 CREATE USER mainengine WITH SUPERUSER PASSWORD '132525';
 ALTER USER postgres WITH PASSWORD '1314';
 
+---
+Mac:[
+    "To start postgresql:
+    brew services start postgresql
+    Or, if you don't want/need a background service you can just run:
+    /opt/homebrew/opt/postgresql/bin/postgres -D /opt/homebrew/var/postgres"
+]
+
+
 //////////////////////
 
-Django SQLite to PostgreSQL
+# Django SQLite to PostgreSQL
 
 $ python3 manage.py dumpdata > data_backup.json
 $ sudo apt update
@@ -85,7 +96,7 @@ $ python3 manage.py loaddata data_backup.json
 
 
 ///////////////////////////////////
-
+# Linux
 sudo /etc/init.d/mysql start
 
 sudo mysql
@@ -95,5 +106,129 @@ mysql -u root -p
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_new_password';
 mysql> FLUSH PRIVILEGES;
 mysql> quit
+
+# Mac
+To secure with password run:
+$    mysql_secure_installation
+
+To connect run:
+$    mysql -uroot
+
+$    mysql.server start
+
+Background service you can just run:
+$    brew services start mysql
+
+create DATABASE IF NOT EXISTS name NEW_DB
+
+---------------------------------------------------------
+
+SELECT TOP 3 * FROM Customers;
+
+SELECT * FROM Customers
+LIMIT 3;
+
+SELECT * FROM Customers
+FETCH FIRST 3 ROWS ONLY;
+
+SELECT TOP 50 PERCENT * FROM Customers;
+
+SELECT * FROM Customers
+FETCH FIRST 50 PERCENT ROWS ONLY;
+
+---------------------------------------------------------
+
+SELECT column, another_column, …
+FROM mytable;
+-
+SELECT column, another_column, …
+FROM mytable
+WHERE column condition
+    AND/OR another_condition
+    IN/NOT IN 
+    IS/IS NOT NULL …;
+-
+SELECT DISTINCT column, another_column, …
+FROM mytable
+WHERE condition(s);
+ORDER BY column ASC/DESC;
+LIMIT num_limit OFFSET num_offset;
+-
+SELECT column, another_column, …
+FROM mytable
+INNER/LEFT/RIGHT/FULL JOIN another_table 
+    ON mytable.id = another_table.matching_id
+WHERE condition(s)
+ORDER BY column, … ASC/DESC
+LIMIT num_limit OFFSET num_offset;
+-
+SELECT group_by_column, AGG_FUNC(column_expression) AS aggregate_result_alias, …
+FROM mytable
+WHERE condition
+GROUP BY column
+HAVING group_condition;
+-
+SELECT DISTINCT column, AGG_FUNC(column_or_expression), …
+FROM mytable
+    JOIN another_table
+      ON mytable.column = another_table.column
+    WHERE constraint_expression
+    GROUP BY column
+    HAVING constraint_expression
+    ORDER BY column ASC/DESC
+    LIMIT count OFFSET COUNT;
+
+#Avoid OFFSET (Cost Inefficiency)
+-
+SELECT *, …
+FROM mytable
+WHERE column > < >= <=
+    IN/NOT IN (SELECT another_column
+               FROM another_table
+               WHERE … );
+
+---------------------------------------------------------
+
+INSERT INTO mytable
+(column, another_column, …)
+VALUES (value_or_expr, another_value_or_expr, …),
+      (value_or_expr_2, another_value_or_expr_2, …),
+      …;
+-
+UPDATE mytable
+SET column = value_or_expr, 
+    other_column = another_value_or_expr, 
+    …
+WHERE condition;
+
+e.g.
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+-
+DELETE FROM mytable
+WHERE condition;
+-
+CREATE TABLE IF NOT EXISTS mytable (
+    column DataType TableConstraint DEFAULT default_value,
+    another_column DataType TableConstraint DEFAULT default_value,
+    …
+);
+-
+TYPES"
+INT, BOOLEAN, FLOAT, DOUBLE, REAL;
+CHAR(num_chars), VARCHAR(num_chars), TEXT;
+DATE, DATETIME;
+BLOB;
+"CONSTRAINS"
+PRIMARY KEY, AUTOINCREMENT, UNIQUE, NOT NULL, CHECK, FOREIGN KEY;"
+-
+ALTER TABLE mytable
+ADD column DataType OptionalTableConstraint 
+    DEFAULT default_value;
+-
+DROP TABLE IF EXISTS mytable;
+# Will Destroy ABSOLUTELY EVERYTHING.
+
 
 

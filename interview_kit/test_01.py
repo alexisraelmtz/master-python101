@@ -1,3 +1,4 @@
+import string
 import re
 
 
@@ -23,23 +24,23 @@ import re
 #     return False
 
 
-def _validateOld(username):
-    if username:
-        chars = int(len(username))
-        if chars >= 4:
-            match = re.search(r"^[a-zA-Z]+[_]?[a-zA-Z0-9]*[a-zA-Z0-9]$", username)
-            match_01 = re.search(r"^[a-zA-Z]*[a-zA-Z0-9]*[_]?[a-zA-Z0-9]$", username)
-            if match or match_01:
-                if match.group() == username:
-                    return True
-                if match_01.group() == username:
-                    return True
-                else:
-                    return False
-            else:
-                return False
-    else:
-        return False
+# def _validateOld(username):
+#     if username:
+#         chars = int(len(username))
+#         if chars >= 4:
+#             match = re.search(r"^[a-zA-Z]+[_]?[a-zA-Z0-9]*[a-zA-Z0-9]$", username)
+#             match_01 = re.search(r"^[a-zA-Z]*[a-zA-Z0-9]*[_]?[a-zA-Z0-9]$", username)
+#             if match or match_01:
+#                 if match.group() == username:
+#                     return True
+#                 if match_01.group() == username:
+#                     return True
+#                 else:
+#                     return False
+#             else:
+#                 return False
+#     else:
+#         return False
 
 
 def validate(name):
@@ -84,9 +85,6 @@ print(john_mary("John&Mary"))
 
 # n = "John&Mary&Mary"
 # print(f"John and Mary are in pairs: {john_mary(n)}")
-
-
-import string
 
 
 def numbers_to_letters(s):
@@ -339,7 +337,6 @@ def string_to_int(string):
                 return conv
             except:
                 return False
-            
 
     a = string
     pos = len(a) - 1  # 3
@@ -363,31 +360,31 @@ print(string_to_int("abc"))
 # print(string_to_int("-10"))
 
 
-def isBalanced_old(myStr):
-    listOpen = ["(","[","{"]
-    listClose = [")","]","}",]
-	listLetters = ["a","b",..."z"]
-    myStack = []
-    for item in myStr:
-		if item in listLetters:
-			break
-        elif item in listOpen:
-            myStack.append(item)
-        elif item in listClose:
-            position = listClose.index(item)
-            if myStack and (listOpen[position] == myStack[len(myStack)-1]):
-                myStack.pop()
-            else:
-                return False
-    if not myStack:
-        return True
-    else:
-        return False
+# def isBalanced_old(myStr):
+#     listOpen = ["(","[","{"]
+#     listClose = [")","]","}",]
+# 	listLetters = ["a","b",..."z"]
+#     myStack = []
+#     for item in myStr:
+# 		if item in listLetters:
+# 			break
+#         elif item in listOpen:
+#             myStack.append(item)
+#         elif item in listClose:
+#             position = listClose.index(item)
+#             if myStack and (listOpen[position] == myStack[len(myStack)-1]):
+#                 myStack.pop()
+#             else:
+#                 return False
+#     if not myStack:
+#         return True
+#     else:
+#         return False
 
 
 def isBalanced(myStr):
-    listOpen = ["(","[","{"]
-    listClose = [")","]","}"]
+    listOpen = ["(", "[", "{"]
+    listClose = [")", "]", "}"]
     myStack = []
     for item in myStr:
         if item in listOpen:
@@ -402,4 +399,3 @@ def isBalanced(myStr):
         return True
     else:
         return False
-    

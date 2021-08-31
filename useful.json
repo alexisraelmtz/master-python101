@@ -154,6 +154,17 @@ WHERE condition(s);
 ORDER BY column ASC/DESC;
 LIMIT num_limit OFFSET num_offset;
 -
+SELECT AGG_FUNC(column_or_expression) AS aggregate_description, …
+FROM mytable
+WHERE constraint_expression
+GROUP BY column;
+-
+SELECT group_by_column, AGG_FUNC(column_expression) AS aggregate_result_alias, …
+FROM mytable
+WHERE condition
+GROUP BY column
+HAVING group_condition;
+-
 SELECT column, another_column, …
 FROM mytable
 INNER/LEFT/RIGHT/FULL JOIN another_table 
@@ -161,12 +172,6 @@ INNER/LEFT/RIGHT/FULL JOIN another_table
 WHERE condition(s)
 ORDER BY column, … ASC/DESC
 LIMIT num_limit OFFSET num_offset;
--
-SELECT group_by_column, AGG_FUNC(column_expression) AS aggregate_result_alias, …
-FROM mytable
-WHERE condition
-GROUP BY column
-HAVING group_condition;
 -
 SELECT DISTINCT column, AGG_FUNC(column_or_expression), …
 FROM mytable
@@ -230,5 +235,16 @@ ADD column DataType OptionalTableConstraint
 DROP TABLE IF EXISTS mytable;
 # Will Destroy ABSOLUTELY EVERYTHING.
 
+---
+Order of Execution:
+
+1 FROM and JOIN s
+2 WHERE
+3 GROUP BY
+4 HAVING
+5 SELECT
+6 DISTINCT
+7 ORDER BY
+8 LIMIT / OFFSET
 
 

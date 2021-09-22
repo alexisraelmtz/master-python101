@@ -1,3 +1,4 @@
+import numpy as np
 # import re
 
 
@@ -104,29 +105,31 @@
 #     return newd
 
 
-# def group_by_owners(files):
-#     if files:
-#         newd = {}
-#         for txt in files:
-#             name = files[txt]
-#             new = []
-#             if name in newd:
-#                 newd[name].append(txt)
-#             else:
-#                 newd[name] = [txt]
-#     return newd
+# import numpy as np
 
 
-# if __name__ == "__main__":
-#     files = {
-#         "Input.txt": "Randy",
-#         "Code.py": "Stan",
-#         "Output.txt": "Randy",
-#         "Assignment.txt": "Randy",
-#         "Sleep.txt": "Roy",
-#         "Angry.txt": "Roy",
-#     }
-#     print(group_by_owners(files))
+def group_by_owners(files):
+    if files:
+        newd = {}
+        for txt in files:
+            name = files[txt]
+            if name in newd:
+                newd[name].append(txt)
+            else:
+                newd[name] = [txt]
+    return newd
+
+
+if __name__ == "__main__":
+    files = {
+        "Input.txt": "Randy",
+        "Code.py": "Stan",
+        "Output.txt": "Randy",
+        "Assignment.txt": "Randy",
+        "Sleep.txt": "Roy",
+        "Angry.txt": "Roy",
+    }
+    print(group_by_owners(files))
 
 
 # def unique_names_OLD(names1, names2):
@@ -224,6 +227,14 @@ cars = {
 for key in cars:
     print(cars[key])
 
+
+def find_roots(a, b, c):
+    vars = [a, b, c]
+    return list(np.roots(vars))
+
+
+print(find_roots(2, 10, 8))
+
 # SELECT
 # 	items.name, sellers.name
 # FROM
@@ -279,5 +290,3 @@ for key in cars:
 # (id, name)
 # SELECT id, name FROM employees
 # WHERE retired = "Y"
-
-

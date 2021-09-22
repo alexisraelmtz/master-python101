@@ -1,4 +1,4 @@
-from client import Developers
+# from client import Developers
 import sqlite3
 
 

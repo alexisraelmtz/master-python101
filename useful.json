@@ -97,11 +97,14 @@ $ python3 manage.py loaddata data_backup.json
 
 ///////////////////////////////////
 # Linux
+
 sudo /etc/init.d/mysql start
 
 sudo mysql
 sudo mysql -u root
 mysql -u root -p
+
+# root
 
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_new_password';
 mysql> FLUSH PRIVILEGES;

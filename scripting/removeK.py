@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = None
 
 
-def removeKFromList(l, k):
+def removeKFromList_OLD(l, k):
     node = l
     while node:
         if node.next and node.next.value == k:
@@ -15,6 +15,20 @@ def removeKFromList(l, k):
     if l and l.value == k:
         return l.next
     return l
+
+
+def removeKFromList(head, k):
+    node = head
+    while node:
+        # if node.value == k:
+        #     return head.next
+        if node.next and node.next.value == k:
+            node.next = node.next.next
+        else:
+            node = node.next
+    if head and head.value == k:
+        return head.next
+    return head
 
 
 def reverse(head):
@@ -64,7 +78,7 @@ def traverse(l):
         l = l.next
 
 
-k = 4
+k = 5
 head = node1
 
 print(traverse(head))
@@ -72,20 +86,20 @@ print(traverse(head))
 deleted = removeKFromList(head, k)
 print(traverse(deleted))
 
-node3.next = node4
-inverted = reverse(head)
-print(traverse(inverted))
+# node3.next = node4
+# inverted = reverse(head)
+# print(traverse(inverted))
 
 
-nodeA = ListNode(8)
-nodeB = ListNode(1)
-nodeC = ListNode(0)
-nodeD = ListNode(1)
-nodeE = ListNode(1)
+# nodeA = ListNode(8)
+# nodeB = ListNode(1)
+# nodeC = ListNode(0)
+# nodeD = ListNode(1)
+# nodeE = ListNode(1)
 
-nodeA.next = nodeB
-nodeB.next = nodeC
-nodeC.next = nodeD
-nodeD.next = nodeE
+# nodeA.next = nodeB
+# nodeB.next = nodeC
+# nodeC.next = nodeD
+# nodeD.next = nodeE
 
-print(isListPalindrome(nodeA))
+# print(isListPalindrome(nodeA))

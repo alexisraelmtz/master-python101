@@ -33,6 +33,27 @@ solution = [["W", "2"],
             ["P", "9"]]
 
 
+def isCryptSolutionOLD(crypt, solution):
+    hasher = {}
+    for list in solution:
+        if not list[0] in hasher:
+            hasher[list[0]] = (list[1])
+
+    validate = []
+    for word in crypt:
+        converted = ""
+        for letter in word:
+            converted += hasher[letter]
+        validate.append((converted))
+
+    if validate[0][0:1:1] != '0' or (validate[0]) == '0':
+        if validate[1][0:1:1] != '0' or (validate[1]) == '0':
+            if validate[2][0:1:1] != '0' or (validate[2]) == '0':
+                if int(validate[0]) + int(validate[1]) == int(validate[2]):
+                    return True
+    return False
+
+
 def isCryptSolution(crypt=crypt, solution=solution):
     hasher = {}
     for list in solution:
@@ -48,8 +69,10 @@ def isCryptSolution(crypt=crypt, solution=solution):
 
     for i in range(3):
         if validate[i][0:1:1] != '0' or (validate[i]) == '0':
-            if int(validate[0]) + int(validate[1]) == int(validate[2]):
-                return True
+            continue
+        return False
+    if int(validate[0]) + int(validate[1]) == int(validate[2]):
+        return True
     return False
 
 

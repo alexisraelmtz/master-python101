@@ -5,7 +5,7 @@ class ListNode(object):
         self.next = None
 
 
-def isListPalindrome(l):
+def isListPalindromeOld(l):
     stack = []
     c = l
     while c:
@@ -17,6 +17,19 @@ def isListPalindrome(l):
             l = l.next
         else:
             return False
+    return True
+
+
+def isListPalindrome(head):
+    cache = []
+    while head:
+        cache.append(head.value)
+        head = head.next
+    for item in cache:
+        verify = cache.pop()
+        if item == verify:
+            continue
+        return False
     return True
 
 
@@ -36,12 +49,12 @@ node4.next = node5
 node5.next = node6
 
 
-l = node1
+head = node1
 
-print(f"Palindrome: {isListPalindrome(l)}")
+print(f"Palindrome: {isListPalindrome(head)}")
 while True:
-    print(f"{l.value} ->>", end=" ")
-    if l.next is None:
+    print(f"{head.value} ->>", end=" ")
+    if head.next is None:
         print("None")
         break
-    l = l.next
+    head = head.next

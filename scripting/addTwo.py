@@ -25,6 +25,7 @@ node5.next = node7
 
 def addTwoHugeNumbers(a=node1, b=node4):
     CHUNCK = max(len(str(a.value)), len(str(b.value)))
+    #
 
     def stringer(head, size):
         transformed = ""
@@ -48,7 +49,6 @@ def addTwoHugeNumbers(a=node1, b=node4):
 # 100112445
 # Expected Output:
 # [223, 104, 105]
-
 
 head = node1
 while True:

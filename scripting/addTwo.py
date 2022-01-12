@@ -1,7 +1,6 @@
 # Singly-linked lists are already defined with this interface:
 # from typing_extensions import Concatenate
 
-
 class ListNode(object):
     def __init__(self, x):
         self.value = x

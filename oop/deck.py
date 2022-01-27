@@ -6,13 +6,13 @@ French = collections.namedtuple("Card", ["Suit", "Rank"])
 
 
 class FrenchDeck:
-    Card = collections.namedtuple("Card", ["Suit", "Rank"])
+    Deck = collections.namedtuple("Card", ["Suit", "Rank"])
     ranks = [str(n) for n in range(2, 11)] + list("JQRA")
     suits = ("clubs dimonds hearts spades").upper().split()
 
     def __init__(self):
         self._cards = [
-            self.Card(suit, rank) for suit in self.suits for rank in self.ranks
+            self.Deck(suit, rank) for suit in self.suits for rank in self.ranks
         ]
 
     def __len__(self):

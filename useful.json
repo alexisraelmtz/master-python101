@@ -37,17 +37,29 @@ myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks")
 
 from collections import defaultdict
 hash = defaultdict(int)
+dic.setdefault(value, key)
 
+from collections import deque
+appendleft(), popleft()
 
 q, mod = divmod(10,
 3)
 print(q, mod)
 # 3 1
 
+l = [None] * 10
+l2 = [0] * 10
+l3 = [0 for _ in range(len(10))]
+
+
+from itertools import islice
+v = range(10)
+
+start = 3
+for x, y in zip(v, islice(v, start, None)):
+    print(x, y)
+
 input = list(map(int, ((input()).strip().split())))
-
-dic.setdefault(value, key)
-
 //////////////////////
 
 # PostgreSQL

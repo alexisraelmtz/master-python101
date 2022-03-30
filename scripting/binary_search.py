@@ -2,14 +2,15 @@ def search(arr, target):
     left = 0
     right = len(arr) - 1
     while left <= right:
-        mid = (left + right) // 2 # make sure to round it down
+        mid = (left + right) // 2  # make sure to round it down
         if arr[mid] == target:
-	        return mid
+            return mid
         elif target < arr[mid]:
-	        right = mid - 1
+            right = mid - 1
         else:
             left = mid + 1
     return -1
+
 
 arr1 = [-2, 3, 4, 7, 8, 9, 11, 13]
 assert search(arr1, 11) == 6

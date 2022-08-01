@@ -1,0 +1,27 @@
+-rw-r--r-- 1 mark.fernandes users 1234 Jun 24 08:42 00-cli-intro.txt
+-rw-r--r-- 1 mark.fernandes users 2396 Jun 24 08:42 01-file-mgmt.txt
+-rw-r--r-- 1 mark.fernandes users 5371 Jun 24 08:42 02-abs-rel-pathnames.txt
+-rw-r--r-- 1 mark.fernandes users 1251 Jun 24 08:42 03-more-abs-rel-pathnames.txt
+-rw-r--r-- 1 mark.fernandes users 4813 Jun 24 08:42 04-shell-wildcards.txt
+-rw-r--r-- 1 mark.fernandes users 5326 Jun 24 08:42 05-chmod-and-number-conv.txt
+-rw-r--r-- 1 mark.fernandes users 2187 Jun 24 08:42 06-process-management.txt
+-rw-r--r-- 1 mark.fernandes users  502 Jun 24 08:42 07-grep-options.txt
+-rw-r--r-- 1 mark.fernandes users 4636 Jun 24 08:42 08-misc-cli-commands.txt
+-rw-r--r-- 1 mark.fernandes users 1011 Jun 24 08:42 90-tricky_globbing.txt
+-rw-r--r-- 1 mark.fernandes users 1515 Jun 24 08:42 91-regular_expressions.txt
+-rw-r--r-- 1 mark.fernandes users 4357 Jun 24 08:42 93-introducing-grep.txt
+-rw-r--r-- 1 mark.fernandes users 2183 Jun 24 08:42 94-introducing-grep-2.txt
+-rw-r--r-- 1 mark.fernandes users 5786 Jun 24 08:42 95-sed-and-awk.txt
+-rw-r--r-- 1 mark.fernandes users  150 Jun 24 08:42 96-install-vboxadditions
+drwxr-xr-x 2 mark.fernandes users   53 Jun 24 08:42 data
+drwxr-xr-x 4 mark.fernandes users  323 Jun 24 08:44 scripts
+
+/home/mark.fernandes/pub/notes/07-grep-options.txt
+/home/mark.fernandes/pub/notes/08-misc-cli-commands.txt
+/home/mark.fernandes/pub/notes/90-tricky_globbing.txt
+/home/mark.fernandes/pub/notes/93-introducing-grep.txt
+/home/mark.fernandes/pub/notes/94-introducing-grep-2.txt
+/home/mark.fernandes/pub/notes/95-sed-and-awk.txt
+
+([0]{1}[7,8]|[9]{1}[0,3,4,5])[-]{1}[a-z]{1,11}[-,_]{1}[a-z]{1,11}[.]*[-]*([\s\S]*)$
+([0]{1}[7,8]|[9]{1}[0,3,4,5])[-]{1}[a-z]{1,11}[-,_]{1}[a-z0-9]+([-]{1}[a-z0-9]+[.]{1}[a-z]{3}|[.]{1}[a-z]{3})
